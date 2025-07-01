@@ -244,3 +244,15 @@ def get_post_share_count(post_id: str) -> int:
     """
     return manager.get_post_share_count(post_id)
 
+
+@mcp.tool()
+def get_post_reactions_breakdown(post_id: str) -> dict[str, Any]:
+    """Get counts for all reaction types on a post."""
+    return manager.get_post_reactions_breakdown(post_id)
+
+
+@mcp.tool()
+def bulk_delete_comments(comment_ids: list[str]) -> list[dict[str, Any]]:
+    """Delete multiple comments by ID."""
+    return manager.bulk_delete_comments(comment_ids)
+
