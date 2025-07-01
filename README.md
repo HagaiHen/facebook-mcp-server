@@ -48,6 +48,8 @@ This MCP provides a suite of AI-callable tools that connect directly to a Facebo
 | `schedule_post`                  | Schedule a post for future publication.                     |
 | `get_page_fan_count`             | Retrieve the total number of Page fans.                     |
 | `get_post_share_count`           | Get the number of shares on a post.                         |
+| `get_post_reactions_breakdown`   | Get all reaction counts for a post in one call.              |
+| `bulk_delete_comments`           | Delete multiple comments by ID.                              |
 
 ---
 

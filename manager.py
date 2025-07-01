@@ -108,3 +108,29 @@ class Manager:
 
     def get_post_share_count(self, post_id: str) -> int:
         return self.api.get_post_share_count(post_id)
+
+    def get_post_reactions_breakdown(self, post_id: str) -> dict[str, Any]:
+        """Return counts for all reaction types on a post."""
+        metrics = [
+            "post_reactions_like_total",
+            "post_reactions_love_total",
+            "post_reactions_wow_total",
+            "post_reactions_haha_total",
+            "post_reactions_sorry_total",
+            "post_reactions_anger_total",
+        ]
+        raw = self.api.get_bulk_insights(post_id, metrics)
+        results: dict[str, Any] = {}
+        for item in raw.get("data", []):
+            name = item.get("name")
+            value = item.get("values", [{}])[0].get("value")
+            results[name] = value
+        return results
+
+    def bulk_delete_comments(self, comment_ids: list[str]) -> list[dict[str, Any]]:
+        """Delete multiple comments and return their results."""
+        results = []
+        for cid in comment_ids:
+            res = self.api.delete_comment(cid)
+            results.append({"comment_id": cid, "result": res})
+        return results
