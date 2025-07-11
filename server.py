@@ -53,6 +53,18 @@ def delete_comment(comment_id: str) -> dict[str, Any]:
     """
     return manager.delete_comment(comment_id)
 
+
+@mcp.tool()
+def hide_comment(comment_id: str) -> dict[str, Any]:
+    """Hide a comment from public view."""
+    return manager.hide_comment(comment_id)
+
+
+@mcp.tool()
+def unhide_comment(comment_id: str) -> dict[str, Any]:
+    """Unhide a previously hidden comment."""
+    return manager.unhide_comment(comment_id)
+
 @mcp.tool()
 def delete_comment_from_post(post_id: str, comment_id: str) -> dict[str, Any]:
     """Alias to delete a comment on a post.
@@ -255,4 +267,10 @@ def get_post_reactions_breakdown(post_id: str) -> dict[str, Any]:
 def bulk_delete_comments(comment_ids: list[str]) -> list[dict[str, Any]]:
     """Delete multiple comments by ID."""
     return manager.bulk_delete_comments(comment_ids)
+
+
+@mcp.tool()
+def bulk_hide_comments(comment_ids: list[str]) -> list[dict[str, Any]]:
+    """Hide multiple comments by ID."""
+    return manager.bulk_hide_comments(comment_ids)
 

@@ -24,6 +24,12 @@ class Manager:
     def delete_comment(self, comment_id: str) -> dict[str, Any]:
         return self.api.delete_comment(comment_id)
 
+    def hide_comment(self, comment_id: str) -> dict[str, Any]:
+        return self.api.hide_comment(comment_id)
+
+    def unhide_comment(self, comment_id: str) -> dict[str, Any]:
+        return self.api.unhide_comment(comment_id)
+
     def delete_comment_from_post(self, post_id: str, comment_id: str) -> dict[str, Any]:
         return self.api.delete_comment(comment_id)
 
@@ -132,5 +138,13 @@ class Manager:
         results = []
         for cid in comment_ids:
             res = self.api.delete_comment(cid)
+            results.append({"comment_id": cid, "result": res})
+        return results
+
+    def bulk_hide_comments(self, comment_ids: list[str]) -> list[dict[str, Any]]:
+        """Hide multiple comments and return their results."""
+        results = []
+        for cid in comment_ids:
+            res = self.api.hide_comment(cid)
             results.append({"comment_id": cid, "result": res})
         return results

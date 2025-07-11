@@ -30,6 +30,8 @@ This MCP provides a suite of AI-callable tools that connect directly to a Facebo
 | `get_post_comments`              | Fetch comments on a given post.                                     |
 | `delete_post`                    | Delete a specific post by ID.                                       |
 | `delete_comment`                 | Delete a specific comment by ID.                                    |
+| `hide_comment`                   | Hide a comment from public view.                         |
+| `unhide_comment`                 | Unhide a previously hidden comment.                      |
 | `delete_comment_from_post`       | Alias for deleting a comment from a specific post.                  |
 | `filter_negative_comments`       | Filter out comments with negative sentiment keywords.               |
 | `get_number_of_comments`         | Count the number of comments on a post.                             |
@@ -50,6 +52,7 @@ This MCP provides a suite of AI-callable tools that connect directly to a Facebo
 | `get_post_share_count`           | Get the number of shares on a post.                         |
 | `get_post_reactions_breakdown`   | Get all reaction counts for a post in one call.              |
 | `bulk_delete_comments`           | Delete multiple comments by ID.                              |
+| `bulk_hide_comments`             | Hide multiple comments by ID.                    |
 
 ---
 
