@@ -29,6 +29,14 @@ class FacebookAPI:
     def delete_comment(self, comment_id: str) -> dict[str, Any]:
         return self._request("DELETE", f"{comment_id}", {})
 
+    def hide_comment(self, comment_id: str) -> dict[str, Any]:
+        """Hide a comment from the Page."""
+        return self._request("POST", f"{comment_id}", {"is_hidden": True})
+
+    def unhide_comment(self, comment_id: str) -> dict[str, Any]:
+        """Unhide a previously hidden comment."""
+        return self._request("POST", f"{comment_id}", {"is_hidden": False})
+
     def get_insights(self, post_id: str, metric: str, period: str = "lifetime") -> dict[str, Any]:
         return self._request("GET", f"{post_id}/insights", {"metric": metric, "period": period})
 
