@@ -129,3 +129,8 @@ Feel free to fork the repo and submit a pull request.
 - Commit your changes: `git commit -m 'feat: add new feature'`
 - Push to the branch: `git push origin feature/YourFeature`
 - Open a pull request 🎉
+
+## Hosted deployment
+
+A hosted deployment is available on [Fronteir AI](https://fronteir.ai/mcp/hagaihen-facebook-mcp-server).
+
