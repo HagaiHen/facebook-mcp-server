@@ -77,3 +77,17 @@ class FacebookAPI:
     def get_post_share_count(self, post_id: str) -> int:
         data = self._request("GET", f"{post_id}", {"fields": "shares"})
         return data.get("shares", {}).get("count", 0)
+
+    def get_comment_replies(self, comment_id: str) -> dict[str, Any]:
+        return self._request("GET", f"{comment_id}/comments", {"fields": "id,message,from,created_time"})
+
+    def get_post_permalink(self, post_id: str) -> str:
+        data = self._request("GET", f"{post_id}", {"fields": "permalink_url"})
+        return data.get("permalink_url", "")
+
+    def get_scheduled_posts(self) -> dict[str, Any]:
+        return self._request("GET", f"{PAGE_ID}/scheduled_posts", {"fields": "id,message,scheduled_publish_time"})
+
+    def get_page_info(self) -> dict[str, Any]:
+        fields = "name,about,category,website,emails,phone,description,location"
+        return self._request("GET", f"{PAGE_ID}", {"fields": fields})

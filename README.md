@@ -53,7 +53,12 @@ This MCP provides a suite of AI-callable tools that connect directly to a Facebo
 | `get_post_share_count`           | Get the number of shares on a post.                         |
 | `get_post_reactions_breakdown`   | Get all reaction counts for a post in one call.              |
 | `bulk_delete_comments`           | Delete multiple comments by ID.                              |
-| `bulk_hide_comments`             | Hide multiple comments by ID.                    |
+| `bulk_hide_comments`             | Hide multiple comments by ID.                               |
+| `bulk_unhide_comments`           | Unhide multiple comments by ID.                             |
+| `get_comment_replies`            | Get all replies to a specific comment.                      |
+| `get_post_permalink`             | Get the permalink URL of a post.                            |
+| `get_scheduled_posts`            | List all scheduled (unpublished) posts on the Page.         |
+| `get_page_info`                  | Get extended Page details (name, about, category, website). |
 
 ---
 

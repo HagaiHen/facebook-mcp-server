@@ -148,3 +148,22 @@ class Manager:
             res = self.api.hide_comment(cid)
             results.append({"comment_id": cid, "result": res})
         return results
+
+    def bulk_unhide_comments(self, comment_ids: list[str]) -> list[dict[str, Any]]:
+        results = []
+        for cid in comment_ids:
+            res = self.api.unhide_comment(cid)
+            results.append({"comment_id": cid, "result": res})
+        return results
+
+    def get_comment_replies(self, comment_id: str) -> dict[str, Any]:
+        return self.api.get_comment_replies(comment_id)
+
+    def get_post_permalink(self, post_id: str) -> str:
+        return self.api.get_post_permalink(post_id)
+
+    def get_scheduled_posts(self) -> dict[str, Any]:
+        return self.api.get_scheduled_posts()
+
+    def get_page_info(self) -> dict[str, Any]:
+        return self.api.get_page_info()
