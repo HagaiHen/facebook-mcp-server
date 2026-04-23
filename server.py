@@ -277,45 +277,30 @@ def bulk_hide_comments(comment_ids: list[str]) -> list[dict[str, Any]]:
 
 @mcp.tool()
 def bulk_unhide_comments(comment_ids: list[str]) -> list[dict[str, Any]]:
-    """Unhide multiple comments by ID.
-    Input: comment_ids (list[str])
-    Output: list of dicts with comment_id and result
-    """
+    """Unhide multiple comments by ID."""
     return manager.bulk_unhide_comments(comment_ids)
 
 
 @mcp.tool()
 def get_comment_replies(comment_id: str) -> dict[str, Any]:
-    """Get all replies to a specific comment.
-    Input: comment_id (str)
-    Output: dict with reply objects
-    """
+    """Get all replies to a specific comment."""
     return manager.get_comment_replies(comment_id)
 
 
 @mcp.tool()
-def get_post_permalink(post_id: str) -> str:
-    """Get the permalink URL of a post.
-    Input: post_id (str)
-    Output: permalink URL string
-    """
+def get_post_permalink(post_id: str) -> dict[str, Any]:
+    """Get the permalink URL of a post."""
     return manager.get_post_permalink(post_id)
 
 
 @mcp.tool()
 def get_scheduled_posts() -> dict[str, Any]:
-    """List all scheduled (unpublished) posts on the Page.
-    Input: None
-    Output: dict with scheduled post objects including id, message, and scheduled_publish_time
-    """
+    """List all scheduled (unpublished) posts on the Page."""
     return manager.get_scheduled_posts()
 
 
 @mcp.tool()
 def get_page_info() -> dict[str, Any]:
-    """Get extended information about the Facebook Page.
-    Input: None
-    Output: dict with name, about, category, website, emails, phone, description, and location
-    """
+    """Get extended information about the Facebook Page."""
     return manager.get_page_info()
 

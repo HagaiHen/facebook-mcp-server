@@ -150,6 +150,7 @@ class Manager:
         return results
 
     def bulk_unhide_comments(self, comment_ids: list[str]) -> list[dict[str, Any]]:
+        """Unhide multiple comments and return their results."""
         results = []
         for cid in comment_ids:
             res = self.api.unhide_comment(cid)
@@ -159,7 +160,7 @@ class Manager:
     def get_comment_replies(self, comment_id: str) -> dict[str, Any]:
         return self.api.get_comment_replies(comment_id)
 
-    def get_post_permalink(self, post_id: str) -> str:
+    def get_post_permalink(self, post_id: str) -> dict[str, Any]:
         return self.api.get_post_permalink(post_id)
 
     def get_scheduled_posts(self) -> dict[str, Any]:

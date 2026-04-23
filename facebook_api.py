@@ -81,9 +81,8 @@ class FacebookAPI:
     def get_comment_replies(self, comment_id: str) -> dict[str, Any]:
         return self._request("GET", f"{comment_id}/comments", {"fields": "id,message,from,created_time"})
 
-    def get_post_permalink(self, post_id: str) -> str:
-        data = self._request("GET", f"{post_id}", {"fields": "permalink_url"})
-        return data.get("permalink_url", "")
+    def get_post_permalink(self, post_id: str) -> dict[str, Any]:
+        return self._request("GET", f"{post_id}", {"fields": "permalink_url"})
 
     def get_scheduled_posts(self) -> dict[str, Any]:
         return self._request("GET", f"{PAGE_ID}/scheduled_posts", {"fields": "id,message,scheduled_publish_time"})
