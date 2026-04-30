@@ -95,9 +95,9 @@ FACEBOOK_PAGE_ID=your_page_id
 ```
 
 ## 🧩 Using with Claude Desktop
-To set up the FacebookMCP in Clade:
+To set up the FacebookMCP in Claude:
 
-1.	Open Clade.
+1.	Open Claude.
 2.	Go to Settings → Developer → Edit Config.
 3.	In the config file that opens, add the following entry:
 
